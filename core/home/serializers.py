@@ -3,14 +3,14 @@ from .models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
-    # recipients = serializers.ListField(
-    #     child=serializers.CharField(allow_blank=False, trim_whitespace=False))
-    # hashtags = serializers.ListField(
-    #     child=serializers.CharField(allow_blank=False, trim_whitespace=False))
+    recipients = serializers.ListField(
+        child=serializers.CharField(allow_blank=False, trim_whitespace=False))
+    hashtags = serializers.ListField(
+        child=serializers.CharField(allow_blank=False, trim_whitespace=False))
 
-    class StringListField(serializers.ListField):
-        recipients = serializers.CharField()
-        hashtags = serializers.CharField()
+    # class StringListField(serializers.ListField):
+    #     recipients = serializers.CharField(allow_blank=False, trim_whitespace=False)
+    #     hashtags = serializers.CharField(allow_blank=False, trim_whitespace=False)
 
 
     class Meta:
